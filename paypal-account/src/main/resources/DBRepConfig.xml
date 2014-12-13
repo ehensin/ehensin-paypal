@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<db-repositories>
+  <repository name="account">
+     <!-- algorithm for split: hash or named -->
+     <alg>hash</alg>
+     <node name="portion1">
+         <master>
+            <db>
+               <property name="driver" value="com.mysql.jdbc.Driver" />
+               <property name="url" value="jdbc:mysql://127.0.0.1:3306/o2o_account_1?useUnicode=true" />
+               <property name="username" value="o2o" />
+               <property name="password" value="123456" />
+               <property name="partions" value="1" />
+               <property name="minconnection" value="1" />
+               <property name="maxconnection" value="2" />
+               
+            </db>
+         </master>
+         <slaver>
+             <db>
+               <property name="driver" value="com.mysql.jdbc.Driver" />
+               <property name="url" value="jdbc:mysql://127.0.0.1:3306/o2o_account_1?useUnicode=true" />
+               <property name="username" value="o2o" />
+               <property name="password" value="123456" />
+               <property name="partions" value="1" />
+               <property name="minconnection" value="1" />
+               <property name="maxconnection" value="2" />
+             </db>
+             <db>
+               <property name="driver" value="com.mysql.jdbc.Driver" />
+               <property name="url" value="jdbc:mysql://127.0.0.1:3306/o2o_account_1?useUnicode=true" />
+               <property name="username" value="o2o" />
+               <property name="password" value="123456" />
+               <property name="partions" value="1" />
+               <property name="minconnection" value="1" />
+               <property name="maxconnection" value="2" />
+             </db>
+         </slaver>
+     </node>
+  </repository>
+
+</db-repositories>

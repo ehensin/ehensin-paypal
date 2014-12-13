@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ehensin.paypal.account.mapper.AccountMapper">
+  <select id="getCount" resultType="java.lang.Integer">select count(*) from o2o_customer_account</select>
+  
+  <insert id="insert" useGeneratedKeys="true"
+    keyProperty="id" parameterType="com.ehensin.paypal.account.orm.CustomerAccountORMapping">
+    insert into o2o_customer_account(uuid,phone,mail,login_name,password,status,last_update_time,balance1,
+    balance2) values(#{uuid},#{phone},#{mail},#{loginName},#{password},#{status},#{lastUpdateTime},
+    #{balance1},#{balance2})
+    </insert>
+   <select id="getCustomerAccount" parameterType="java.lang.String" resultType="com.ehensin.paypal.account.orm.CustomerAccountORMapping">
+       select id as id, 
+       uuid as uuid,
+       phone as phone,
+       mail as mail,
+       login_name as loginName,
+       password as password,
+       status as status,
+       last_update_time as lastUpdateTime,
+       balance1 as balance1,
+       balance2 as balance2,
+       balance3 as balance3,
+       balance4 as balance4,
+       balance5 as balance5
+       from o2o_customer_account where uuid=#{uuid}
+   </select>
+</mapper>
